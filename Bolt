@@ -4,23 +4,20 @@ Program: Javascript
 
 async function startProgram() {
 
-	setMainLed({ r: 0, g: 0, b: 255 });
+setMainLed({ r: 0, g: 0, b: 255 });
 
-	await speak("Hello Square", true);
+await speak("Figure 8", true);
 
-	await delay(1);
+await delay(1);
 
-	for (var _i1 = 0; _i1 < 4; _i1++) {
+setSpeed(75)
 
-		setMainLed(getRandomColor());
+setMainLed(getRandomColor());
 
-		await Sound.Game.Coin.play(true);
+await spin(360, 4)
 
-		await roll((getHeading() + 90), 60, 1);
+await spin(-360, 4)
 
-		await delay(1);
-
-	}
+stopRoll()
 
 }
-

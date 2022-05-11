@@ -3,13 +3,16 @@ Date: 5.3.2022
 Program: Maze
 
 async function startProgram() {
+	
 	playMatrixAnimation(0, false);
 	
-	await roll( 0, 20, 3)
+	await delay(5)
+	
+	await roll( 0, 50, 3.75)
 	
 	setSpeed(0)
 	
-	await strobe({ r: 255, g: 0, b: 0 }, (3 / 1) * 0.5, 1).
+	await strobe({ r: 0, g: 0, b: 255 }, (3 / 1) * 0.5, 1).
 	
 	stopRoll
 }
@@ -20,3 +23,4 @@ registerMatrixAnimation({
 	fps: 1,
 	transition: MatrixAnimationTransition.None
 });
+

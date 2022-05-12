@@ -16,7 +16,7 @@ async function startProgram() {
 	
 	await delay(1)
 	
-	await roll( 90, 50, 2.5)
+	await roll( 90, 50, 2.25)
 	
 	setSpeed(0)
 	
@@ -28,11 +28,19 @@ async function startProgram() {
 	
 	await delay(1)
 	
-	await roll( 225, 50, 1.75)
+	await roll( 225, 50, 1.5)
 	
 	await strobe({ r: 255, g: 0, b: 0 }, (3 / 1) * 0.5, 1);
 	
 	await delay(1)
+	
+	await roll( 135, 50, 1)
+	
+	await delay(1)
+	
+	await roll( 45, 50, 1.75)
+	
+	await Sound.Game.Coin.play(true);
 	
 	stopRoll
 }
@@ -43,3 +51,4 @@ registerMatrixAnimation({
 	fps: 1,
 	transition: MatrixAnimationTransition.None
 });
+

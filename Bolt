@@ -4,6 +4,7 @@ Program: Maze
 
 async function startProgram() {
 	
+	// Start and foward to blue.
 	playMatrixAnimation(0, false);
 	
 	await delay(5)
@@ -16,31 +17,34 @@ async function startProgram() {
 	
 	await delay(1)
 	
-	await roll( 90, 50, 2.25)
+	// Turn right and go down to the note.
+	await roll( 90, 50, 2.6)
 	
 	setSpeed(0)
 	
 	await delay(1)
 	
-	await roll( 180, 50, 1.75)
+	await roll( 180, 50, 1.5)
 	
 	await Sound.Game.Coin.play(true);
 	
 	await delay(1)
 	
-	await roll( 225, 50, 1.5)
+	//Down to red. 
+	await roll( 225, 50, 2)
 	
 	await strobe({ r: 255, g: 0, b: 0 }, (3 / 1) * 0.5, 1);
 	
 	await delay(1)
 	
-	await roll( 135, 50, 1)
+	// Go right then up to second note.
+	await roll( 135, 50, 1.30)
 	
 	await delay(1)
 	
-	await roll( 45, 50, 1.75)
+	await roll( 45, 50, 1.65)
 	
-	await Sound.Game.Coin.play(true);
+	await Sound.Game.BonusPoint.play(true);
 	
 	stopRoll
 }
@@ -49,6 +53,9 @@ registerMatrixAnimation({
 	frames: [[[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]], [[2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2, 2], [1, 1, 1, 2, 2, 1, 1, 1], [1, 1, 1, 2, 2, 1, 1, 1], [1, 1, 1, 2, 2, 1, 1, 1], [1, 1, 1, 2, 2, 1, 1, 1], [1, 1, 1, 2, 2, 1, 1, 1], [1, 1, 1, 2, 2, 1, 1, 1]], [[1, 1, 1, 11, 11, 1, 1, 1], [1, 1, 1, 11, 11, 1, 1, 1], [1, 1, 11, 11, 11, 11, 1, 1], [1, 1, 11, 1, 1, 11, 1, 1], [1, 11, 11, 1, 1, 11, 11, 1], [1, 11, 11, 11, 11, 11, 11, 1], [11, 11, 1, 1, 1, 1, 11, 11], [11, 11, 1, 1, 1, 1, 11, 11]], [[1, 14, 14, 14, 14, 14, 14, 1], [14, 14, 14, 14, 14, 14, 14, 14], [14, 14, 1, 1, 1, 1, 14, 14], [14, 14, 1, 1, 1, 1, 14, 14], [14, 14, 14, 14, 14, 14, 14, 1], [14, 14, 14, 14, 14, 14, 1, 1], [14, 14, 1, 1, 14, 14, 14, 1], [14, 14, 1, 1, 1, 14, 14, 14]], [[8, 8, 8, 8, 8, 8, 8, 8], [8, 8, 8, 8, 8, 8, 8, 8], [1, 1, 1, 8, 8, 1, 1, 1], [1, 1, 1, 8, 8, 1, 1, 1], [1, 1, 1, 8, 8, 1, 1, 1], [1, 1, 1, 8, 8, 1, 1, 1], [1, 1, 1, 8, 8, 1, 1, 1], [1, 1, 1, 8, 8, 1, 1, 1]]],
 	palette: [{ r: 255, g: 255, b: 255 }, { r: 0, g: 0, b: 0 }, { r: 255, g: 0, b: 0 }, { r: 255, g: 64, b: 0 }, { r: 255, g: 128, b: 0 }, { r: 255, g: 191, b: 0 }, { r: 255, g: 255, b: 0 }, { r: 185, g: 246, b: 30 }, { r: 0, g: 255, b: 0 }, { r: 185, g: 255, b: 255 }, { r: 0, g: 255, b: 255 }, { r: 0, g: 0, b: 255 }, { r: 145, g: 0, b: 211 }, { r: 157, g: 48, b: 118 }, { r: 255, g: 0, b: 255 }, { r: 204, g: 27, b: 126 }],
 	fps: 1,
+	transition: MatrixAnimationTransition.None
+});
+
 	transition: MatrixAnimationTransition.None
 });
 

@@ -37,7 +37,7 @@ async function startProgram() {
 	
 	await delay(1)
 	
-	// Go right then up to second note.
+	//Go right then up to second note.
 	await roll( 135, 50, 1.15)
 	
 	await delay(1)
@@ -45,6 +45,14 @@ async function startProgram() {
 	await roll( 45, 50, 1.65)
 	
 	await Sound.Game.BonusPoint.play(true);
+	
+	//Turn then down to green
+	
+	await roll( 135, 50, 1.35)
+	
+	await roll( 180, 50, 0.5)
+	
+	await strobe({ r: 0, g: 255, b: 0 }, (3 / 1) * 0.5, 1);
 	
 	stopRoll
 }
